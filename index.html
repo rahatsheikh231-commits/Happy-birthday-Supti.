@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday, Lokkhi Supti 💙</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    background: #f8f3e9;
+    color: #34495e;
+    min-height: 100vh;
+}
+
+.page {
+    display: none;
+    min-height: 100vh;
+    padding: 35px 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    animation: fade 0.7s ease;
+}
+
+.page.active {
+    display: flex;
+}
+
+.content {
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+    padding: 35px 25px;
+    background: rgba(255,255,255,0.75);
+    border: 1px solid #dce9ef;
+    border-radius: 22px;
+    box-shadow: 0 10px 35px rgba(70,110,130,0.10);
+}
+
+@keyframes fade {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.small {
+    color: #7a9eae;
+    letter-spacing: 3px;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+}
+
+h1 {
+    color: #527e96;
+    font-size: clamp(32px, 7vw, 52px);
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #527e96;
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+p {
+    font-size: 17px;
+    line-height: 1.9;
+    margin-bottom: 17px;
+}
+
+.heart {
+    color: #e68d9b;
+    font-size: 30px;
+    margin: 15px;
+}
+
+button {
+    background: #7daabd;
+    color: white;
+    border: none;
+    padding: 13px 27px;
+    border-radius: 30px;
+    font-size: 15px;
+    cursor: pointer;
+    margin: 10px 5px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #527e96;
+    transform: translateY(-2px);
+}
+
+.secondary {
+    background: #d9e8ed;
+    color: #456a7d;
+}
+
+.footer {
+    margin-top: 30px;
+    font-size: 12px;
+    color: #91aab5;
+    letter-spacing: 1px;
+}
+
+.note {
+    background: #f5f8f8;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: left;
+    margin: 20px 0;
+    border-left: 4px solid #9fc4d2;
+}
+
+.little-list {
+    list-style: none;
+    text-align: left;
+    max-width: 470px;
+    margin: 20px auto;
+}
+
+.little-list li {
+    padding: 13px;
+    margin: 9px 0;
+    background: #eef5f6;
+    border-radius: 12px;
+    font-size: 16px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 5px solid white;
+    box-shadow: 0 4px 15px #d5e1e5;
+}
+
+.gallery img:first-child {
+    grid-column: span 2;
+    height: 280px;
+}
+
+.big-heart {
+    font-size: 65px;
+    margin: 20px;
+}
+
+.progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: #80afc2;
+    width: 16.66%;
+    transition: 0.4s;
+    z-index: 10;
+}
+
+@media(max-width: 500px) {
+    .content {
+        padding: 28px 18px;
+    }
+
+    .gallery img {
+        height: 160px;
+    }
+
+    .gallery img:first-child {
+        height: 210px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="progress" id="progress"></div>
+
+<!-- PAGE 1 -->
+<section class="page active" id="page1">
+<div class="content">
+    <div class="small">A little something for you</div>
+
+    <div class="big-heart">💙</div>
+
+    <h1>Happy Birthday,<br>Lokkhi Supti</h1>
+
+    <p>
+        Today is all about you.<br>
+        So I made a little something special.
+    </p>
+
+    <button onclick="nextPage(2)">Open the note →</button>
+
+    <div class="footer">Made with care, just for you.</div>
+</div>
+</section>
+
+<!-- PAGE 2 -->
+<section class="page" id="page2">
+<div class="content">
+    <div class="small">A little birthday note</div>
+
+    <h2>Dear Supti 💌</h2>
+
+    <div class="note">
+        <p>
+            Happy Birthday to the most special person in my life.
+            I don't know how to explain everything I feel,
+            but I just want you to know that you mean a lot to me.
+        </p>
+
+        <p>
+            I hope your day is filled with happiness,
+            beautiful moments and lots of reasons to smile.
+        </p>
+
+        <p>
+            You deserve all the good things in this world.
+            Always keep smiling and stay the way you are.
+        </p>
+
+        <p>
+            I am really lucky to have you in my life. 💙
+        </p>
+    </div>
+
+    <button class="secondary" onclick="nextPage(1)">← Back</button>
+    <button onclick="nextPage(3)">Next →</button>
+</div>
+</section>
+
+<!-- PAGE 3 -->
+<section class="page" id="page3">
+<div class="content">
+    <div class="small">The little things</div>
+
+    <h2>Things I Love About You 🌷</h2>
+
+    <ul class="little-list">
+        <li>💙 Your beautiful smile.</li>
+        <li>🌸 The way you make ordinary moments special.</li>
+        <li>✨ Your cute little expressions.</li>
+        <li>😊 The happiness you bring into my life.</li>
+        <li>🫶 The way you are simply yourself.</li>
+        <li>💌 All the little memories we share.</li>
+    </ul>
+
+    <p>
+        Sometimes the smallest things become
+        the biggest reasons to smile.
+    </p>
+
+    <button class="secondary" onclick="nextPage(2)">← Back</button>
+    <button onclick="nextPage(4)">Next →</button>
+</div>
+</section>
+
+<!-- PAGE 4 -->
+<section class="page" id="page4">
+<div class="content">
+    <div class="small">Our little memories</div>
+
+    <h2>A Few Beautiful Moments 📸</h2>
+
+    <p>
+        Some moments are too special to forget.
+        Here are a few memories I wanted to keep.
+    </p>
+
+    <div class="gallery">
+        <img src="photo1.jpg" alt="Our memory 1">
+        <img src="photo2.jpg" alt="Our memory 2">
+        <img src="photo3.jpg" alt="Our memory 3">
+    </div>
+
+    <p style="margin-top:20px;">
+        More memories, more smiles and more beautiful days ahead. 💙
+    </p>
+
+    <button class="secondary" onclick="nextPage(3)">← Back</button>
+    <button onclick="nextPage(5)">Next →</button>
+</div>
+</section>
+
+<!-- PAGE 5 -->
+<section class="page" id="page5">
+<div class="content">
+    <div class="small">From my heart to you</div>
+
+    <h2>One More Thing... 💙</h2>
+
+    <p>
+        I may not always be able to express my feelings perfectly,
+        but I genuinely wish to see you happy.
+    </p>
+
+    <p>
+        I want to be there in your happy moments,
+        support you in difficult times and make
+        many beautiful memories together.
+    </p>
+
+    <p>
+        I hope all your dreams come true.
+        May Allah bless you with happiness,
+        success and a beautiful life.
+    </p>
+
+    <p>
+        And one last thing, I really hope you become my wife soon.
+        I want to share all the little and big moments of life with you....💙
+    </p>
+
+    <p>
+        Until then, take care of yourself, my Lokkhi......💙
+    </p>
+
+    <button class="secondary" onclick="nextPage(4)">← Back</button>
+    <button onclick="nextPage(6)">One Last Surprise →</button>
+</div>
+</section>
+
+<!-- PAGE 6 -->
+<section class="page" id="page6">
+<div class="content">
+    <div class="small">With lots of love</div>
+
+    <div class="big-heart">💙</div>
+
+    <h1>Happy Birthday<br>Once Again!</h1>
+
+    <p>
+        May this new year of your life bring
+        endless happiness, beautiful memories
+        and everything your heart wishes for.
+    </p>
+
+    <h2>Stay Happy, My Lokkhi! 🌷</h2>
+
+    <div class="heart">♡</div>
+
+    <p>
+        Always keep smiling.
+    </p>
+
+    <button class="secondary" onclick="nextPage(1)">Read Again ↻</button>
+
+    <div class="footer">Made with love, just for you. 💙</div>
+</div>
+</section>
+
+<script>
+function nextPage(number) {
+    document.querySelectorAll(".page").forEach(function(page) {
+        page.classList.remove("active");
+    });
+
+    document.getElementById("page" + number).classList.add("active");
+
+    document.getElementById("progress").style.width =
+        (number / 6 * 100) + "%";
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+</script>
+
+</body>
+</html>
